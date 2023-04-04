@@ -1,0 +1,40 @@
+.container{
+  padding: 30px;
+  .login-container {
+    ion-item {
+      margin-bottom: 10px;
+      border-color: #403E39;
+      border-width: thin;
+      border-style: solid;
+      border-radius: 6px;
+      ion-icon {
+        display: inline-block;
+        vertical-align: middle;
+       }
+       ion-input {
+        font-weight: bold
+       }
+    }
+    ion-button {
+      margin-top: 20px;
+      font-weight: bold
+    }
+  }
+  .logo-container{
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+  }
+
+  .forgot-password-Container {
+    ion-text {
+      padding-top: 10px;
+    }
+
+    .forgot-password-Col{
+      display: flex;
+      justify-content: end;
+    }
+
+  }
+}
