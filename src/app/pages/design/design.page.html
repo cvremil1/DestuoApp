@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Designs</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar animated="true" placeholder="Search"></ion-searchbar>
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content overflow-scroll="false">
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-select aria-label="Seasons" interface="popover" placeholder="Seasons">
+              <ion-select-option value="Seasons1">Seasons1</ion-select-option>
+              <ion-select-option value="Seasons2">Seasons2</ion-select-option>
+              <ion-select-option value="Seasons3">Seasons3</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-checkbox justify="start">Exclude design</ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          
+  <ion-button shape="round">Show</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid >
+
+  <ion-row class="ion-justify-content-center">
+    <ion-col sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="2" *ngFor="let design of designs">
+ <app-design-item [design]="design"></app-design-item>
+    </ion-col>
+  </ion-row>
+
+  </ion-grid>
+
+
+
+
+   
+
+</ion-content>

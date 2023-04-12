@@ -1,0 +1,38 @@
+
+
+<ion-content [fullscreen]="true">
+ 
+  <ion-router-outlet></ion-router-outlet>
+
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Menu Button</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+</ion-content>
+<ion-tabs>
+ 
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="designs">
+      <ion-icon name="shirt-outline"></ion-icon>
+      Designs
+    </ion-tab-button>
+    <ion-tab-button tab="soldDesigns">
+      <ion-icon name="shirt"></ion-icon>
+      Sold Designs
+    </ion-tab-button>
+    <ion-tab-button tab="cart" >
+      <ion-icon name="cart"></ion-icon>
+      Cart
+    </ion-tab-button>
+    <ion-tab-button tab="account">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      Account
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
