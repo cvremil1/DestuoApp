@@ -1,0 +1,235 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      
+    </ion-buttons>
+    <ion-title>
+      <ion-img src="https://i.postimg.cc/SRtgrVSr/logo.jpg" id="logo"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ <ion-card color="Medium">
+  <ion-card-header>
+  <ion-card-title><h4>Personal Details</h4>  <hr></ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <form action="" [formGroup]="registration">
+ 
+  
+
+ <ion-grid> <ion-row>
+<ion-col> <ion-item>
+ <ion-label position="floating">First Name</ion-label>
+<ion-input type="text" name="First Name" placeholder="Enter First Name" formControlName="firstName" [(ngModel)]="user.firstName">
+
+ </ion-input><div>
+  <ng-container *ngIf="registration.get('firstName')?.hasError('required') && (registration.get('firstName')?.touched||registration.get('firstName')?.dirty)">
+     <p class="error">Field cannot be empty</p> 
+   </ng-container>
+    </div></ion-item></ion-col>
+<ion-col><ion-item>
+    <ion-label position="floating">Last Name</ion-label>
+    <ion-input type="text" name="Last Name" placeholder="Enter Last Name" formControlName="lastName" [(ngModel)]="user.lastName"></ion-input>
+    <div>
+      <ng-container *ngIf="registration.get('lastName')?.hasError('required') && (registration.get('lastName')?.touched||registration.get('lastName')?.dirty)">
+         <p class="error">Field cannot be empty</p> 
+       </ng-container>
+        </div>
+  </ion-item></ion-col></ion-row></ion-grid>
+
+<ion-grid> <ion-row><ion-col><ion-item>
+    <ion-label position="floating">Current Address</ion-label>
+    <ion-textarea  name="txtCurrentAddress" rows="2" cols="20" id="txtCurrentAddress" tabindex="3" placeholder="Enter current address" formControlName="currentAddress" [(ngModel)]="user.currentAddress"></ion-textarea>
+    <div>
+      <ng-container *ngIf="registration.get('currentAddress')?.hasError('required') && (registration.get('currentAddress')?.touched || registration.get('currentAddress')?.dirty)">
+        <p class="error">Field cannot be empty</p>
+      </ng-container>
+    </div>
+      </ion-item> </ion-col>
+<ion-col><ion-item>
+  <ion-label position="floating">Permanent Address</ion-label>
+  <ion-textarea  name="TxtPermanentAddress" rows="2" cols="20" id="TxtPermanentAddress" tabindex="4" placeholder="Enter Permanent address" formControlName="permanentAddress" [(ngModel)]="user.permanentAddress"></ion-textarea>
+  <div>
+    <ng-container *ngIf="registration.get('permanentAddress')?.hasError('required') && (registration.get('permanentAddress')?.touched || registration.get('permanentAddress')?.dirty)">
+      <p class="error">Field cannot be empty</p>
+    </ng-container>
+  </div>
+</ion-item> </ion-col>
+
+
+</ion-row> </ion-grid>    
+
+<ion-grid> <ion-row><ion-col>  <ion-item>
+    <ion-label position="floating">Country</ion-label>
+    <ion-input type="text" name="Country" placeholder="Please select country" formControlName="country" [(ngModel)]="user.country"></ion-input>
+    <div>
+      <ng-container *ngIf="registration.get('country')?.hasError('required') && (registration.get('country')?.touched || registration.get('country')?.dirty)">
+        <p class="error">Field cannot be empty</p>
+      </ng-container>
+    </div>
+  </ion-item></ion-col>
+<ion-col> <ion-item>
+  <ion-label position="floating">State</ion-label>
+  <ion-input type="text" name="state" placeholder="Please select state" formControlName="state" [(ngModel)]="user.state"></ion-input>
+  <div>
+    <ng-container *ngIf="registration.get('state')?.hasError('required') && (registration.get('state')?.touched||registration.get('state')?.dirty)">
+       <p class="error">Field cannot be empty</p> 
+     </ng-container>
+      </div> 
+</ion-item></ion-col></ion-row> </ion-grid>
+
+  <ion-grid> <ion-row><ion-col> 
+    <ion-item>
+      <ion-label position="floating">City</ion-label>
+      <ion-input type="text" name="City" placeholder="Please Enter City" formControlName="city" [(ngModel)]="user.city"></ion-input>
+      <div>
+        <ng-container *ngIf="registration.get('city')?.hasError('required') && (registration.get('city')?.touched||registration.get('city')?.dirty)">
+           <p class="error">Field cannot be empty</p> 
+         </ng-container>
+          </div> 
+    </ion-item>
+  </ion-col>
+  <ion-col> 
+    <ion-item>
+      <ion-label position="floating">Zip Code</ion-label>
+      <ion-input type="text" name="zip code" placeholder="Please Enter zip code" formControlName="zipCode" [(ngModel)]="user.zipCode" ></ion-input>
+      <div>
+        <ng-container *ngIf="registration.get('zipCode')?.hasError('required') && (registration.get('zipCode')?.touched||registration.get('zipCode')?.dirty)">
+           <p class="error">Field cannot be empty</p> 
+         </ng-container>
+          </div> 
+    </ion-item>
+  </ion-col></ion-row> </ion-grid>
+
+  <ion-grid> <ion-row><ion-col> <ion-item>
+    <ion-label position="floating">Phone Number</ion-label>
+    <ion-input type="tel" name="phone number" placeholder="Enter Phone Number" formControlName="phoneNumber" [(ngModel)]="user.phoneNumber"></ion-input>
+    <div>
+      <ng-container *ngIf="registration.get('phoneNumber')?.hasError('required') && (registration.get('phoneNumber')?.touched||registration.get('phoneNumber')?.dirty)">
+         <p class="error">Field cannot be empty</p> 
+       </ng-container>
+        </div> 
+  </ion-item></ion-col>
+  <ion-col><ion-item>
+    <ion-label position="floating">E-mail</ion-label>
+    <ion-input type="email" name="e-mail" placeholder="Enter E-mail" formControlName="email" [(ngModel)]="user.email"></ion-input>
+    <div>
+      <ng-container *ngIf="registration.get('phoneNumber')?.hasError('required') && (registration.get('phoneNumber')?.touched||registration.get('phoneNumber')?.dirty)">
+         <p class="error">Field cannot be empty</p> 
+       </ng-container>
+        </div> 
+  </ion-item></ion-col></ion-row> </ion-grid>
+  <ion-grid> <ion-row><ion-col> <ion-item>
+    <ion-label position="floating">Username</ion-label>
+    <ion-input type="text" name="Username" placeholder="Enter Username" formControlName="username" [(ngModel)]="user.username"></ion-input>
+    <div>
+      <ng-container *ngIf="registration.get('username')?.hasError('required') && (registration.get('username')?.touched||registration.get('username')?.dirty)">
+         <p class="error">Field cannot be empty</p> 
+       </ng-container>
+        </div> 
+  </ion-item></ion-col>
+  <ion-col> <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" name="password"  placeholder="Enter Password" formControlName="password" [(ngModel)]="user.password"></ion-input>
+    <div>
+      <ng-container *ngIf="registration.get('password')?.hasError('required') && (registration.get('password')?.touched||registration.get('password')?.dirty)">
+         <p class="error">Field cannot be empty</p> 
+       </ng-container>
+        </div> 
+  </ion-item></ion-col>
+  
+  <ion-col> <ion-item>
+    <ion-label position="floating">Confirm Password</ion-label>
+    <ion-input type="password" name="confirm password" placeholder="re-enter password"formControlName="confirmPassword" [(ngModel)]="user.confirmPassword" ></ion-input>
+    <div>
+      <ng-container *ngIf="registration.get('password')?.hasError('required') && (registration.get('confirmPassword')?.touched||registration.get('confirmPassword')?.dirty)">
+         <p class="error">Field cannot be empty</p> 
+       </ng-container>
+        </div> 
+  </ion-item></ion-col></ion-row> </ion-grid>
+
+
+</form>
+</ion-card-content>
+</ion-card>
+  
+
+<ion-content class="ion-padding">
+<h4>Privacy Policy</h4> <hr>
+<p ></p>
+<div >
+  <p>
+  This privacy notice discloses the privacy practices for <u>(website address).</u> This privacy notice applies solely to information collected by this website. It will notify you of the following:
+ <p>
+  <div class="points">
+ <p>1. What personally identifiable information is collected from you through the website, how it is used and with whom it may be shared.</p>
+ <p>2. What choices are available to you regarding the use of your data.</p>
+ <p>3. The security procedures in place to protect the misuse of your information.</p>
+ <p>4. How you can correct any inaccuracies in the information.</p>
+</div>
+ <p><b >Information Collection, Use, and Sharing</b></p> 
+ <p>
+     We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via email or other direct contact from you. We will not sell or rent this information to anyone.                                    
+     We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.                                   
+     Unless you ask us not to, we may contact you via email in the future to tell you about specials, new products or services, or changes to this privacy policy.</p>
+ 
+ <p><b>Your Access to and Control Over Information</b></p>
+ <p>You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us via the email address or phone number given on our website:</p>
+ <p>
+  <div class="points">
+ <p>a. See what data we have about you, if any.</p>
+ <p>b. Change/correct any data we have about you.</p>
+ <p>c. Have us delete any data we have about you.</p>
+ <p>d. Express any concern you have about our use of your data.</p>
+</div>
+     <p>
+     </p>
+     <p>
+         <b>Security</b></p>
+     <p>
+         We take precautions to protect your information. When you submit sensitive information via the website, your information is protected both online and offline. Wherever we collect sensitive information (such as credit card data), that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a lock icon in the address bar and looking for &quot;https&quot; at the beginning of the address of the Web page. While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers/servers in which we store personally identifiable information are kept in a secure environment.
+         <p>
+             <b>If you feel that we are not abiding by this privacy policy, you should contact us immediately via telephone at <u>x+91XXXXXXXXXX</u> or via <u>info@destuo.com</u> </b>
+         </p>
+         <p>
+         </p>
+     
+  
+        </div>
+
+        <div>
+        
+          <ion-label>Accept Terms & Conditions</ion-label> 
+          <ion-checkbox [(ngModel)]="termsAccepted"></ion-checkbox>
+       
+      </div>
+      <div >
+        <ion-button  color="primary" [disabled]="!termsAccepted" type="submit" (click)="onSubmit()" >Submit</ion-button>
+        <ion-button  color="warning" >Cancel</ion-button>
+      </div>
+
+          
+     </ion-content>
+   
+
+     <script>
+      
+      export class MyComponent {
+        termsAccepted = false;
+    
+        submitForm() {
+          // Call the __doPostBack() function after a brief delay
+          setTimeout(() => {
+            __doPostBack('chkAccpectTerms', '');
+          }, 100);
+        }
+      }
+
+   
+
+    </script>
+
+</ion-content>
+
