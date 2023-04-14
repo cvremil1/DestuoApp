@@ -21,45 +21,67 @@
 
  <ion-grid> <ion-row>
 <ion-col> <ion-item>
- <ion-label position="floating">First Name</ion-label>
-<ion-input type="text" name="First Name" placeholder="Enter First Name" formControlName="firstName" [(ngModel)]="user.firstName">
-
- </ion-input><div>
-  <ng-container *ngIf="registration.get('firstName')?.hasError('required') && (registration.get('firstName')?.touched||registration.get('firstName')?.dirty)">
-     <p class="error">Field cannot be empty</p> 
-   </ng-container>
-    </div></ion-item></ion-col>
-<ion-col><ion-item>
-    <ion-label position="floating">Last Name</ion-label>
-    <ion-input type="text" name="Last Name" placeholder="Enter Last Name" formControlName="lastName" [(ngModel)]="user.lastName"></ion-input>
+  <ion-label position="floating">First Name</ion-label>
+  <ion-input type="text" name="First Name" placeholder="Enter First Name" formControlName="firstName" [(ngModel)]="user.firstName">
+  </ion-input>
+  <div>
+    <ng-container *ngIf="registration.get('firstName')?.hasError('required') && (registration.get('firstName')?.touched||registration.get('firstName')?.dirty)">
+       <p class="error">Field cannot be empty</p> 
+     </ng-container>
+      </div>
+      <div>
+        <ng-container *ngIf="registration.get('firstName')?.hasError('minlength') && (registration.get('firstName')?.touched||registration.get('firstName')?.dirty)">
+           <p class="error">First Name is too short</p> 
+         </ng-container>
+          </div>
+          <div>
+            <ng-container *ngIf="registration.get('firstName')?.hasError('pattern') && (registration.get('firstName')?.touched||registration.get('firstName')?.dirty)">
+               <p class="error">First Name should contain only letters</p> 
+             </ng-container>
+              </div>
+    </ion-item></ion-col>
+  <ion-col><ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input type="text" name="Last Name" placeholder="Enter Last Name" formControlName="lastName" [(ngModel)]="user.lastName"></ion-input>
+      <div>
+        <ng-container *ngIf="registration.get('lastName')?.hasError('required') && (registration.get('lastName')?.touched||registration.get('lastName')?.dirty)">
+           <p class="error">Field cannot be empty</p> 
+         </ng-container>
+          </div>
+          <div>
+            <ng-container *ngIf="registration.get('lastName')?.hasError('minlength') && (registration.get('lastName')?.touched||registration.get('lastName')?.dirty)">
+               <p class="error">Last Name is too short</p> 
+             </ng-container>
+              </div>
+              <div>
+                <ng-container *ngIf="registration.get('lastName')?.hasError('pattern') && (registration.get('lastName')?.touched||registration.get('lastName')?.dirty)">
+                   <p class="error">Last Name should contain only letters</p> 
+                 </ng-container>
+                  </div>
+    </ion-item></ion-col></ion-row></ion-grid>
+  
+  <ion-grid> <ion-row><ion-col><ion-item>
+      <ion-label position="floating">Current Address</ion-label>
+      <ion-textarea  name="txtCurrentAddress" rows="2" cols="20" id="txtCurrentAddress" tabindex="3" placeholder="Enter current address" formControlName="currentAddress" [(ngModel)]="user.currentAddress"></ion-textarea>
+      <div>
+        <ng-container *ngIf="registration.get('currentAddress')?.hasError('required') && (registration.get('currentAddress')?.touched || registration.get('currentAddress')?.dirty)">
+          <p class="error">Field cannot be empty</p>
+        </ng-container>
+      </div>
+        </ion-item> </ion-col>
+  <ion-col><ion-item>
+    <ion-label position="floating">Permanent Address</ion-label>
+    <ion-textarea  name="TxtPermanentAddress" rows="2" cols="20" id="TxtPermanentAddress" tabindex="4" placeholder="Enter Permanent address" formControlName="permanentAddress" [(ngModel)]="user.permanentAddress"></ion-textarea>
     <div>
-      <ng-container *ngIf="registration.get('lastName')?.hasError('required') && (registration.get('lastName')?.touched||registration.get('lastName')?.dirty)">
-         <p class="error">Field cannot be empty</p> 
-       </ng-container>
-        </div>
-  </ion-item></ion-col></ion-row></ion-grid>
-
-<ion-grid> <ion-row><ion-col><ion-item>
-    <ion-label position="floating">Current Address</ion-label>
-    <ion-textarea  name="txtCurrentAddress" rows="2" cols="20" id="txtCurrentAddress" tabindex="3" placeholder="Enter current address" formControlName="currentAddress" [(ngModel)]="user.currentAddress"></ion-textarea>
-    <div>
-      <ng-container *ngIf="registration.get('currentAddress')?.hasError('required') && (registration.get('currentAddress')?.touched || registration.get('currentAddress')?.dirty)">
+      <ng-container *ngIf="registration.get('permanentAddress')?.hasError('required') && (registration.get('permanentAddress')?.touched || registration.get('permanentAddress')?.dirty)">
         <p class="error">Field cannot be empty</p>
       </ng-container>
     </div>
-      </ion-item> </ion-col>
-<ion-col><ion-item>
-  <ion-label position="floating">Permanent Address</ion-label>
-  <ion-textarea  name="TxtPermanentAddress" rows="2" cols="20" id="TxtPermanentAddress" tabindex="4" placeholder="Enter Permanent address" formControlName="permanentAddress" [(ngModel)]="user.permanentAddress"></ion-textarea>
-  <div>
-    <ng-container *ngIf="registration.get('permanentAddress')?.hasError('required') && (registration.get('permanentAddress')?.touched || registration.get('permanentAddress')?.dirty)">
-      <p class="error">Field cannot be empty</p>
-    </ng-container>
-  </div>
-</ion-item> </ion-col>
-
-
-</ion-row> </ion-grid>    
+  </ion-item> </ion-col>
+  
+  
+  </ion-row> </ion-grid>    
+    
 
 <ion-grid> <ion-row><ion-col>  <ion-item>
     <ion-label position="floating">Country</ion-label>
